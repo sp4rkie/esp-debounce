@@ -11,7 +11,7 @@ I wrote these couple of lines.
 what is it
 ----------
 
-- a small sketch to debounce a key the most optimal way with minimum of lines of code
+- a small sketch for ESP8266/ESP32 to debounce a key the most optimal way with minimum of lines of code
 
 features
 --------
@@ -19,4 +19,5 @@ features
 - adjustable rate to take samples for a key status
 - adjustable over all time to debounce a key (or to ignore it after all)
 - CPU resources claimed only if a key is pressed/released
+- key press and release status available
 
