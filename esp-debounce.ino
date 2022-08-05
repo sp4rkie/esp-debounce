@@ -1,3 +1,4 @@
+
 #include "mylcf.h"
 #include <Ticker.h>
 
@@ -34,7 +35,7 @@ class Button
 //            state = ~0;       // don't reset during operation
             debounces = 0;  
         }
-        _u32 
+        _u8 
         debounce() {
             ++debounces;        // debounces run so far
             state = state << 1 | digitalRead(button) | DEBOUNCE_MASK << 1;
@@ -49,7 +50,7 @@ _u8 key_state;
 void
 samplekey()
 {
-    _u32 k_stat = button.debounce();
+    _u8 k_stat = button.debounce();
 
 Serial.printf(".%x", button.state);
     if (k_stat != KEY_NONE) {
@@ -86,12 +87,10 @@ setup()
 void 
 loop() 
 {
-    static _u32 old_keystate;
-    static _u32 old_millis;
-    static _u8 ledtoggle;
-    _u32 do_something;
+    static _u8 old_keystate;
 
     if (key_state != old_keystate) {
+        digitalWrite(LED_BUILTIN, !digitalRead(LED_BUILTIN));
         Serial.printf("new key_state: %d\n", key_state);
         old_keystate = key_state;
     }
