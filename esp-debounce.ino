@@ -1,4 +1,11 @@
 
+//
+// tested on 
+//     LOLIN(WEMOS) D1 R2 & mini
+// and
+//     WEMOS D1 MINI ESP32
+//
+
 #include "mylcf.h"
 #include <Ticker.h>
 
